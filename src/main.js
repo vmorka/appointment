@@ -1,12 +1,13 @@
 import Vue from 'vue'
 import App from './App.vue'
 import VueRouter from 'vue-router'
-import bootstrap from 'bootstrap-vue'
+import BootstrapVue from 'bootstrap-vue'
+import Bootstrap from 'bootstrap'
+
+Vue.use(BootstrapVue);
 
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
-
-Vue.use(bootstrap);
 
 new Vue({
   el: '#app',

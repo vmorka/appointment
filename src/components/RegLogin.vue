@@ -149,7 +149,7 @@
 
 .reg-right {
   position: absolute;
-  right: 250px;
+  right: 180px;
   top: 20px;
 }
 

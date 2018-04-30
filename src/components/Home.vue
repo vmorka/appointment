@@ -138,7 +138,7 @@
   width: 100%;
 }
 
-.modal-footer {
+.modal-footer, .modal-body {
   justify-content: center;
 }
 </style>
