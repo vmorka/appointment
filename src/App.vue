@@ -2,7 +2,6 @@
   <div id="app">
     <reg-login></reg-login>
     <home></home>
-    <signup></signup>
   </div>
 </template>
 
