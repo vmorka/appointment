@@ -8,7 +8,6 @@
 <!-- Modal -->
 <div id="aCity" class="modal fade" role="dialog">
   <div class="modal-dialog">
-
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
@@ -16,16 +15,10 @@
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
       <div class="modal-body">
-        <div class="checkbox">
-            <label><input type="checkbox" value=""> Panevėžys</label>
-            </div>
-            <div class="checkbox">
-            <label><input type="checkbox" value=""> Kaunas</label>
-            </div>
-            <div class="checkbox">
-            <label><input type="checkbox" value="" > Vilnius</label>
-            </div>
+        <div v-for="city in cities">
+            <label><input type="checkbox" name="" value="" /> {{ city.city_name }}</label>
       </div>
+    </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-info btn-lg" data-dismiss="modal">Ieškoti</button>
       </div>
@@ -44,15 +37,9 @@
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
       <div class="modal-body">
-        <div class="checkbox">
-            <label><input type="checkbox" value=""> Odontologija</label>
-            </div>
-            <div class="checkbox">
-            <label><input type="checkbox" value=""> Manikiūras</label>
-            </div>
-            <div class="checkbox">
-            <label><input type="checkbox" value="" > Masažas</label>
-            </div>
+        <div v-for="service in services">
+            <label><input type="checkbox" name="" value="" /> {{ service.service_name }}</label>
+      </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-info btn-lg" data-dismiss="modal">Ieškoti</button>
@@ -72,15 +59,9 @@
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
       <div class="modal-body">
-        <div class="checkbox">
-            <label><input type="checkbox" value=""> Odontologas</label>
-            </div>
-            <div class="checkbox">
-            <label><input type="checkbox" value=""> Visažistė</label>
-            </div>
-            <div class="checkbox">
-            <label><input type="checkbox" value="" > Masažistas</label>
-            </div>
+        <div v-for="specialist in specialists">
+            <label><input type="checkbox" name="" value="" /> {{ specialist.specialist_name }}</label>
+      </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-info btn-lg" data-dismiss="modal">Ieškoti</button>
@@ -92,9 +73,9 @@
 
     <table class="table">
         <tr>
-                <th><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#aCity">Miestas</button></th>
-                <th><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#aService">Paslauga</button></th>
-                <th><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#aSpecialist">Specialistas</button></th>
+                <th><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#aCity" @click="onGetCities">Miestas</button></th>
+                <th><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#aService" @click="onGetServices">Paslauga</button></th>
+                <th><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#aSpecialist" @click="onGetSpecialists">Specialistas</button></th>
         </tr>
       </table>
     </div>
@@ -103,10 +84,49 @@
 </template>
 
 <script>
+  import axios from 'axios';
+
   export default {
     data () {
       return {
-
+        cities: [],
+        services: [],
+        specialists: []
+      }
+    },
+    methods:  {
+      onGetCities() {
+        axios.get('http://192.168.0.119/api/cities')
+        .then(
+          response => {
+            this.cities = response.data.city
+          }
+        )
+        .catch(
+          error => console.log(error)
+        );
+      },
+      onGetServices() {
+        axios.get('http://192.168.0.119/api/services')
+        .then(
+          response => {
+            this.services = response.data.service;
+          }
+        )
+        .catch(
+          error => console.log(error)
+        );
+      },
+      onGetSpecialists() {
+        axios.get('http://192.168.0.119/api/specialists')
+        .then(
+          response => {
+            this.specialists = response.data.specialist;
+          }
+        )
+        .catch(
+          error => console.log(error)
+        );
       }
     }
   }
