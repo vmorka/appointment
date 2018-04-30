@@ -25,13 +25,13 @@
               <fieldset>
                 <legend>Prisijungimo duomenys</legend>
                 <label for="email">El. paštas<br/>
-                  <input name="email" type="email" placeholder="Įveskite el. paštą">
+                  <input name="email" type="email" placeholder="Įveskite el. paštą" required>
                 </label><br/>
                 <label for="password">Slaptažodis<br/>
-                  <input name="password" type="password" placeholder="Įveskite slaptažodį">
+                  <input name="password" type="password" placeholder="Įveskite slaptažodį" required>
                 </label><br/>
                 <label for="password">Pakartokite slaptažodį<br/>
-                  <input name="password" type="password" placeholder="Pakartokite slaptažodį">
+                  <input name="password" type="password" placeholder="Pakartokite slaptažodį" required>
                 </label><br/>
               </fieldset>
               <fieldset>
@@ -52,7 +52,7 @@
             </form>
           </div>
           <div class="modal-footer">
-            <button type="submit" class="btn btn-info btn-lg">Registruotis</button>
+            <button type="submit" class="btn btn-info btn-lg" @click.prevent="signupClient">Registruotis</button>
           </div>
         </div>
       </div>
@@ -71,22 +71,22 @@
               <fieldset>
                 <legend>Prisijungimo duomenys</legend>
                 <label for="email">El. paštas<br/>
-                  <input name="email" type="email" placeholder="Įveskite el. paštą">
+                  <input name="email" type="email" placeholder="Įveskite el. paštą" required>
                 </label><br/>
                 <label for="password">Slaptažodis<br/>
-                  <input name="password" type="password" placeholder="Įveskite slaptažodį">
+                  <input name="password" type="password" placeholder="Įveskite slaptažodį" required>
                 </label><br/>
                 <label for="password">Pakartokite slaptažodį<br/>
-                  <input name="password" type="password" placeholder="Pakartokite slaptažodį">
+                  <input name="password" type="password" placeholder="Pakartokite slaptažodį" required>
                 </label><br/>
               </fieldset>
               <fieldset>
                 <legend>Kontaktiniai duomenys</legend>
                 <label for="company_name">Įmonės pavadinimas<br/>
-                  <input name="company_name" type="text" placeholder="">
+                  <input name="company_name" type="text" placeholder="" required>
                 </label><br/>
                 <label for="city">Miestas<br/>
-                  <input name="city" type="text" placeholder="">
+                  <input name="city" type="text" placeholder="" required>
                 </label><br/>
                 <label for="phone">Tel. Nr.<br/>
                   <input name="phone" type="text" placeholder="">
@@ -98,7 +98,7 @@
             </form>
           </div>
           <div class="modal-footer">
-            <button type="submit" class="btn btn-info btn-lg">Registruotis</button>
+            <button type="submit" class="btn btn-info btn-lg" @click.prevent="signupCompany">Registruotis</button>
           </div>
         </div>
       </div>
@@ -115,15 +115,15 @@
           <div class="modal-body">
             <form class="form-control">
               <label for="email">El. paštas<br />
-                <input id="email" type="email" placeholder="Įveskite el. paštą" />
+                <input id="email" type="email" placeholder="Įveskite el. paštą" required />
               </label><br />
               <label for="password">Slaptažodis<br />
-                <input id="password" type="password" placeholder="Įveskite slaptažodį" />
+                <input id="password" type="password" placeholder="Įveskite slaptažodį" required />
               </label><br />
             </form>
           </div>
           <div class="modal-footer">
-            <button type="submit" class="btn btn-info btn-lg">Prisijungti</button>
+            <button type="submit" class="btn btn-info btn-lg" @click.prevent="login">Prisijungti</button>
           </div>
         </div>
       </div>
@@ -136,6 +136,38 @@
     data () {
       return {
 
+      }
+    },
+    methods: {
+      signupClient() {
+          axios.post('http://192.168.0.119/api/user',
+              {name: this.username, email: this.email, password: this.password})
+              .then(
+                  (response) => console.log(response)
+              )
+              .catch(
+                  (error) => console.log(error)
+              );
+      },
+      signupCompany() {
+          axios.post('http://192.168.0.119/api/user',
+              {name: this.username, email: this.email, password: this.password})
+              .then(
+                  (response) => console.log(response)
+              )
+              .catch(
+                  (error) => console.log(error)
+              );
+      },
+      login() {
+          axios.post('http://192.168.0.119/api/user',
+              {name: this.username, email: this.email, password: this.password})
+              .then(
+                  (response) => console.log(response)
+              )
+              .catch(
+                  (error) => console.log(error)
+              );
       }
     }
   }
