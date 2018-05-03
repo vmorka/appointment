@@ -28,7 +28,6 @@
                     <label for="email">El. paštas</label>
                     <input
                             type="email"
-                            id="email"
                             name="email"
                             class="form-control"
                             v-model="email">
@@ -37,7 +36,6 @@
                     <label for="password">Slaptažodis</label>
                     <input
                             type="password"
-                            id="password"
                             name="password"
                             class="form-control"
                             v-model="password">
@@ -67,7 +65,6 @@
                     <label for="city">Miestas</label>
                     <input
                             type="text"
-                            id="city"
                             name="city"
                             class="form-control"
                             v-model="city">
@@ -76,7 +73,6 @@
                     <label for="phone">Tel. Nr.</label>
                     <input
                             type="text"
-                            id="phone"
                             name="phone"
                             class="form-control"
                             v-model="phone">
@@ -107,7 +103,6 @@
                     <label for="email">El. paštas</label>
                     <input
                             type="email"
-                            id="email"
                             name="email"
                             class="form-control"
                             v-model="email">
@@ -116,7 +111,6 @@
                     <label for="password">Slaptažodis</label>
                     <input
                             type="password"
-                            id="password"
                             name="password"
                             class="form-control"
                             v-model="password">
@@ -137,7 +131,6 @@
                     <label for="city">Miestas</label>
                     <input
                             type="text"
-                            id="city"
                             name="city"
                             class="form-control"
                             v-model="city">
@@ -146,7 +139,6 @@
                     <label for="phone">Tel. Nr.</label>
                     <input
                             type="text"
-                            id="phone"
                             name="phone"
                             class="form-control"
                             v-model="phone">
@@ -184,7 +176,6 @@
                   <label for="email">El. paštas</label>
                   <input
                           type="email"
-                          id="email"
                           name="email"
                           class="form-control"
                           v-model="email">
@@ -193,7 +184,6 @@
                   <label for="password">Slaptažodis</label>
                   <input
                           type="password"
-                          id="password"
                           name="password"
                           class="form-control"
                           v-model="password">
@@ -210,6 +200,8 @@
 </template>
 
 <script>
+  import axios from 'axios'
+
   export default {
     data () {
       return {
@@ -225,7 +217,7 @@
     },
     methods: {
       signupClient() {
-          axios.post('http://192.168.0.119/api/user',
+          axios.post('http://192.168.123.103/api/user',
               {email: this.email, password: this.password, first_name: this.first_name, last_name: this.last_name, city: this.city, phone: this.phone})
               .then(
                   (response) => console.log(response)
@@ -235,7 +227,7 @@
               );
       },
       signupCompany() {
-          axios.post('http://192.168.0.119/api/company',
+          axios.post('http://192.168.123.103/api/company',
               {email: this.email, password: this.password, company_name: this.company_name, city: this.city, phone: this.phone, description: this.description})
               .then(
                   (response) => console.log(response)

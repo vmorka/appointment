@@ -107,7 +107,7 @@
         );
       },
       onGetServices() {
-        axios.get('http://192.168.0.119/api/services')
+        axios.get('http://192.168.123.103/api/services')
         .then(
           response => {
             this.services = response.data.service;
@@ -118,7 +118,7 @@
         );
       },
       onGetSpecialists() {
-        axios.get('http://192.168.0.119/api/specialists')
+        axios.get('http://192.168.123.103/api/specialists')
         .then(
           response => {
             this.specialists = response.data.specialist;

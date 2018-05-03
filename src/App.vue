@@ -8,7 +8,6 @@
 <script>
   import Home from './components/Home.vue';
   import RegLogin from './components/RegLogin.vue';
-  import signup from './components/signup.vue';
 
   export default {
     data () {
@@ -18,8 +17,7 @@
     },
     components: {
       'home': Home,
-      'reg-login': RegLogin,
-      'signup': signup
+      'reg-login': RegLogin
     }
   }
 </script>
