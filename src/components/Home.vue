@@ -16,11 +16,11 @@
       </div>
       <div class="modal-body">
         <div v-for="city in cities">
-            <label><input type="checkbox" name="" value="" /> {{ city.city_name }}</label>
+            <label><input type="checkbox" name="city" /> {{ city.city_name }}</label>
       </div>
     </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-info btn-lg" data-dismiss="modal">Ieškoti</button>
+        <button type="button" class="btn btn-info btn-lg">Ieškoti</button>
       </div>
     </div>
   </div>
@@ -38,11 +38,11 @@
       </div>
       <div class="modal-body">
         <div v-for="service in services">
-            <label><input type="checkbox" name="" value="" /> {{ service.service_name }}</label>
+            <label><input type="checkbox" name="service" /> {{ service.service_name }}</label>
       </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-info btn-lg" data-dismiss="modal">Ieškoti</button>
+        <button type="button" class="btn btn-info btn-lg">Ieškoti</button>
       </div>
     </div>
   </div>
@@ -60,11 +60,11 @@
       </div>
       <div class="modal-body">
         <div v-for="specialist in specialists">
-            <label><input type="checkbox" name="" value="" /> {{ specialist.specialist_name }}</label>
+            <label><input type="checkbox" name="specialist" /> {{ specialist.specialist_name }}</label>
       </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-info btn-lg" data-dismiss="modal">Ieškoti</button>
+        <button type="button" class="btn btn-info btn-lg">Ieškoti</button>
       </div>
     </div>
   </div>
@@ -73,9 +73,9 @@
 
     <table class="table">
         <tr>
-                <th><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#aCity" @click="onGetCities">Miestas</button></th>
-                <th><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#aService" @click="onGetServices">Paslauga</button></th>
-                <th><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#aSpecialist" @click="onGetSpecialists">Specialistas</button></th>
+          <th><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#aCity" @click="onGetCities">Miestas</button></th>
+          <th><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#aService" @click="onGetServices">Paslauga</button></th>
+          <th><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#aSpecialist" @click="onGetSpecialists">Specialistas</button></th>
         </tr>
       </table>
     </div>
