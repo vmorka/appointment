@@ -24,30 +24,63 @@
             <form class="form-control">
               <fieldset>
                 <legend>Prisijungimo duomenys</legend>
-                <label for="email">El. paštas<br/>
-                  <input name="email" type="email" placeholder="Įveskite el. paštą" required>
-                </label><br/>
-                <label for="password">Slaptažodis<br/>
-                  <input name="password" type="password" placeholder="Įveskite slaptažodį" required>
-                </label><br/>
-                <label for="password">Pakartokite slaptažodį<br/>
-                  <input name="password" type="password" placeholder="Pakartokite slaptažodį" required>
-                </label><br/>
+                <div class="form-group">
+                    <label for="email">El. paštas</label>
+                    <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            class="form-control"
+                            v-model="email">
+                </div>
+                <div class="form-group">
+                    <label for="password">Slaptažodis</label>
+                    <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            class="form-control"
+                            v-model="password">
+                </div>
               </fieldset>
               <fieldset>
                 <legend>Kontaktiniai duomenys</legend>
-                <label for="fname">Vardas<br/>
-                  <input name="fname" type="text" placeholder="">
-                </label><br/>
-                <label for="lname">Pavardė<br/>
-                  <input name="lname" type="text" placeholder="">
-                </label><br/>
-                <label for="city">Miestas<br/>
-                  <input name="city" type="text" placeholder="">
-                </label><br/>
-                <label for="phone">Tel. Nr.<br/>
-                  <input name="phone" type="text" placeholder="">
-                </label><br/>
+                <div class="form-group">
+                    <label for="first_name">Vardas</label>
+                    <input
+                            type="text"
+                            id="first_name"
+                            name="first_name"
+                            class="form-control"
+                            v-model="first_name">
+                </div>
+                <div class="form-group">
+                    <label for="last_name">Pavardė</label>
+                    <input
+                            type="text"
+                            id="last_name"
+                            name="last_name"
+                            class="form-control"
+                            v-model="last_name">
+                </div>
+                <div class="form-group">
+                    <label for="city">Miestas</label>
+                    <input
+                            type="text"
+                            id="city"
+                            name="city"
+                            class="form-control"
+                            v-model="city">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Tel. Nr.</label>
+                    <input
+                            type="text"
+                            id="phone"
+                            name="phone"
+                            class="form-control"
+                            v-model="phone">
+                </div>
               </fieldset>
             </form>
           </div>
@@ -70,30 +103,63 @@
             <form class="form-control">
               <fieldset>
                 <legend>Prisijungimo duomenys</legend>
-                <label for="email">El. paštas<br/>
-                  <input name="email" type="email" placeholder="Įveskite el. paštą" required>
-                </label><br/>
-                <label for="password">Slaptažodis<br/>
-                  <input name="password" type="password" placeholder="Įveskite slaptažodį" required>
-                </label><br/>
-                <label for="password">Pakartokite slaptažodį<br/>
-                  <input name="password" type="password" placeholder="Pakartokite slaptažodį" required>
-                </label><br/>
+                <div class="form-group">
+                    <label for="email">El. paštas</label>
+                    <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            class="form-control"
+                            v-model="email">
+                </div>
+                <div class="form-group">
+                    <label for="password">Slaptažodis</label>
+                    <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            class="form-control"
+                            v-model="password">
+                </div>
               </fieldset>
               <fieldset>
                 <legend>Kontaktiniai duomenys</legend>
-                <label for="company_name">Įmonės pavadinimas<br/>
-                  <input name="company_name" type="text" placeholder="" required>
-                </label><br/>
-                <label for="city">Miestas<br/>
-                  <input name="city" type="text" placeholder="" required>
-                </label><br/>
-                <label for="phone">Tel. Nr.<br/>
-                  <input name="phone" type="text" placeholder="">
-                </label><br/>
-                <label for="description">Įmonės aprašymas<br/>
-                  <textarea name="phone" type="text" placeholder="Čia galite trumpai aprašyti įmonę..."></textarea>
-                </label><br/>
+                <div class="form-group">
+                    <label for="company_name">Įmonės pavadinimas</label>
+                    <input
+                            type="text"
+                            id="company_name"
+                            name="company_name"
+                            class="form-control"
+                            v-model="company_name">
+                </div>
+                <div class="form-group">
+                    <label for="city">Miestas</label>
+                    <input
+                            type="text"
+                            id="city"
+                            name="city"
+                            class="form-control"
+                            v-model="city">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Tel. Nr.</label>
+                    <input
+                            type="text"
+                            id="phone"
+                            name="phone"
+                            class="form-control"
+                            v-model="phone">
+                </div>
+                <div class="form-group">
+                    <label for="password">Įmonės aprašymas</label>
+                    <textarea
+                            id="description"
+                            name="description"
+                            class="form-control"
+                            placeholder="Čia galite aprašyti savo įmonę..."
+                            v-model="description"></textarea>
+                </div>
               </fieldset>
             </form>
           </div>
@@ -114,12 +180,24 @@
           </div>
           <div class="modal-body">
             <form class="form-control">
-              <label for="email">El. paštas<br />
-                <input id="email" type="email" placeholder="Įveskite el. paštą" required />
-              </label><br />
-              <label for="password">Slaptažodis<br />
-                <input id="password" type="password" placeholder="Įveskite slaptažodį" required />
-              </label><br />
+              <div class="form-group">
+                  <label for="email">El. paštas</label>
+                  <input
+                          type="email"
+                          id="email"
+                          name="email"
+                          class="form-control"
+                          v-model="email">
+              </div>
+              <div class="form-group">
+                  <label for="password">Slaptažodis</label>
+                  <input
+                          type="password"
+                          id="password"
+                          name="password"
+                          class="form-control"
+                          v-model="password">
+              </div>
             </form>
           </div>
           <div class="modal-footer">
@@ -135,13 +213,20 @@
   export default {
     data () {
       return {
-
+        email: '',
+        password: '',
+        first_name: '',
+        last_name: '',
+        city: '',
+        phone: '',
+        company_name: '',
+        description: ''
       }
     },
     methods: {
       signupClient() {
           axios.post('http://192.168.0.119/api/user',
-              {name: this.username, email: this.email, password: this.password})
+              {email: this.email, password: this.password, first_name: this.first_name, last_name: this.last_name, city: this.city, phone: this.phone})
               .then(
                   (response) => console.log(response)
               )
@@ -150,8 +235,8 @@
               );
       },
       signupCompany() {
-          axios.post('http://192.168.0.119/api/user',
-              {name: this.username, email: this.email, password: this.password})
+          axios.post('http://192.168.0.119/api/company',
+              {email: this.email, password: this.password, company_name: this.company_name, city: this.city, phone: this.phone, description: this.description})
               .then(
                   (response) => console.log(response)
               )
@@ -160,14 +245,7 @@
               );
       },
       login() {
-          axios.post('http://192.168.0.119/api/user',
-              {name: this.username, email: this.email, password: this.password})
-              .then(
-                  (response) => console.log(response)
-              )
-              .catch(
-                  (error) => console.log(error)
-              );
+
       }
     }
   }

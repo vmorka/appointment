@@ -96,7 +96,7 @@
     },
     methods:  {
       onGetCities() {
-        axios.get('http://192.168.0.119/api/cities')
+        axios.get('http://192.168.123.103/api/cities')
         .then(
           response => {
             this.cities = response.data.city
