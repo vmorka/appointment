@@ -49,7 +49,9 @@
 
       },
       addRow() {
-        this.services.push({})
+        this.services.push({
+          
+        })
       },
       deleteRow(index) {
         this.services.splice(index,1)
