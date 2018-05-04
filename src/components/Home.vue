@@ -11,14 +11,14 @@
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
-      <h4 class="modal-title">Pasirinkite miestą</h4>
+        <h4 class="modal-title">Pasirinkite miestą</h4>
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
       <div class="modal-body">
         <div v-for="city in cities">
-            <label><input type="checkbox" name="city" /> {{ city.city_name }}</label>
+          <label><input type="checkbox" name="city" /> {{ city.city_name }}</label>
+        </div>
       </div>
-    </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-info btn-lg">Ieškoti</button>
       </div>
@@ -96,7 +96,7 @@
     },
     methods:  {
       onGetCities() {
-        axios.get('http://192.168.123.103/api/cities')
+        axios.get('http://192.168.123.107/api/cities')
         .then(
           response => {
             this.cities = response.data.city
@@ -107,7 +107,7 @@
         );
       },
       onGetServices() {
-        axios.get('http://192.168.123.103/api/services')
+        axios.get('http://192.168.123.107/api/services')
         .then(
           response => {
             this.services = response.data.service;
@@ -118,7 +118,7 @@
         );
       },
       onGetSpecialists() {
-        axios.get('http://192.168.123.103/api/specialists')
+        axios.get('http://192.168.123.107/api/specialists')
         .then(
           response => {
             this.specialists = response.data.specialist;

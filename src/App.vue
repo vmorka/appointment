@@ -1,13 +1,17 @@
 <template>
   <div id="app">
-    <reg-login></reg-login>
+    <signup></signup>
+    <signin></signin>
+    <add-services></add-services>
     <home></home>
   </div>
 </template>
 
 <script>
   import Home from './components/Home.vue';
-  import RegLogin from './components/RegLogin.vue';
+  import signup from './components/signup.vue';
+  import signin from './components/signin.vue';
+  import addServices from './components/addServices.vue';
 
   export default {
     data () {
@@ -17,7 +21,9 @@
     },
     components: {
       'home': Home,
-      'reg-login': RegLogin
+      'signup': signup,
+      'signin': signin,
+      'add-services': addServices
     }
   }
 </script>

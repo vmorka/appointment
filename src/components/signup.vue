@@ -1,15 +1,11 @@
 <template>
-  <div id="app">
+  <div>
     <div class="dropdown reg-right">
-      <button class="btn btn-info btn-lg dropdown-toggle" type="button" data-toggle="dropdown">Registracija
-      <span class="caret"></span></button>
+      <button class="btn btn-info btn-lg dropdown-toggle" type="button" data-toggle="dropdown">Registracija</button>
       <ul class="dropdown-menu">
         <li><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#regUser">Registracija vartotojui</button></li>
         <li><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#regCompany">Registracija įmonei</button></li>
       </ul>
-    </div>
-    <div class="login-right">
-      <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#login">Prisijungti</button>
     </div>
     <div id="regUser" class="modal fade" role="dialog">
       <div class="modal-dialog">
@@ -161,41 +157,6 @@
         </div>
       </div>
     </div>
-    <div id="login" class="modal fade" role="dialog">
-      <div class="modal-dialog">
-
-        <!-- Modal content-->
-        <div class="modal-content">
-          <div class="modal-header">
-            <h4 class="modal-title">Prisijungimas</h4>
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-          </div>
-          <div class="modal-body">
-            <form class="form-control">
-              <div class="form-group">
-                  <label for="email">El. paštas</label>
-                  <input
-                          type="email"
-                          name="email"
-                          class="form-control"
-                          v-model="email">
-              </div>
-              <div class="form-group">
-                  <label for="password">Slaptažodis</label>
-                  <input
-                          type="password"
-                          name="password"
-                          class="form-control"
-                          v-model="password">
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button type="submit" class="btn btn-info btn-lg" @click.prevent="login">Prisijungti</button>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
 </template>
 
@@ -217,7 +178,7 @@
     },
     methods: {
       signupClient() {
-          axios.post('http://192.168.123.103/api/user',
+          axios.post('http://192.168.123.107/api/user',
               {email: this.email, password: this.password, first_name: this.first_name, last_name: this.last_name, city: this.city, phone: this.phone})
               .then(
                   (response) => console.log(response)
@@ -227,7 +188,7 @@
               );
       },
       signupCompany() {
-          axios.post('http://192.168.123.103/api/company',
+          axios.post('http://192.168.123.107/api/company',
               {email: this.email, password: this.password, company_name: this.company_name, city: this.city, phone: this.phone, description: this.description})
               .then(
                   (response) => console.log(response)
@@ -235,9 +196,6 @@
               .catch(
                   (error) => console.log(error)
               );
-      },
-      login() {
-
       }
     }
   }
@@ -245,24 +203,18 @@
 
 <style>
 .dropdown-menu {
-  padding: 0;
+  padding: 2px;
   background-color: #17a2b8;
 }
 
 .reg-right {
   position: absolute;
-  right: 180px;
+  right: 250px;
   top: 20px;
 }
 
 .modal-footer {
   justify-content: center;
-}
-
-.login-right {
-  position: absolute;
-  right: 50px;
-  top: 20px;
 }
 
 .btn-lg {
