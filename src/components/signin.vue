@@ -1,84 +1,25 @@
 <template>
-  <div>
-    <div class="dropdown login-right">
-      <button class="btn btn-info btn-lg dropdown-toggle" type="button" data-toggle="dropdown">Prisijungti</button>
-      <ul class="dropdown-menu">
-        <li><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#signinClient">Prisijungimas vartotojui</button></li>
-        <li><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#signinCompany">Prisijungimas įmonei</button></li>
-      </ul>
-    </div>
-    <div id="signinClient" class="modal fade" role="dialog">
-      <div class="modal-dialog">
-
-        <!-- Modal content-->
-        <div class="modal-content">
-          <div class="modal-header">
-            <h4 class="modal-title">Vartotojo prisijungimas</h4>
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-          </div>
-          <div class="modal-body">
-            <form class="form-control">
-              <legend>Prisijungimo duomenys</legend>
-              <div class="form-group">
-                  <input
-                          type="email"
-                          name="email"
-                          placeholder="El.paštas"
-                          class="form-control"
-                          v-model="email">
-              </div>
-              <div class="form-group">
-                  <input
-                          type="password"
-                          name="password"
-                          placeholder="Slaptažodis"
-                          class="form-control"
-                          v-model="password">
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button type="submit" class="btn btn-info btn-lg" @click.prevent="signinClient()">Prisijungti</button>
-          </div>
-        </div>
+  <div class="container">
+    <form class="form-control">
+      <legend>Prisijungimo duomenys</legend>
+      <div class="form-group">
+          <input
+                  type="email"
+                  name="email"
+                  placeholder="El.paštas"
+                  class="form-control"
+                  v-model="email">
       </div>
-    </div>
-    <div id="signinCompany" class="modal fade" role="dialog">
-      <div class="modal-dialog">
-
-        <!-- Modal content-->
-        <div class="modal-content">
-          <div class="modal-header">
-            <h4 class="modal-title">Įmonės prisijungimas</h4>
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-          </div>
-          <div class="modal-body">
-            <form class="form-control">
-              <legend>Prisijungimo duomenys</legend>
-              <div class="form-group">
-                  <input
-                          type="email"
-                          name="email"
-                          placeholder="El.paštas"
-                          class="form-control"
-                          v-model="email">
-              </div>
-              <div class="form-group">
-                  <input
-                          type="password"
-                          name="password"
-                          placeholder="Slaptažodis"
-                          class="form-control"
-                          v-model="password">
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button type="submit" class="btn btn-info btn-lg" @click.prevent="signinCompany">Prisijungti</button>
-          </div>
-        </div>
+      <div class="form-group">
+          <input
+                  type="password"
+                  name="password"
+                  placeholder="Slaptažodis"
+                  class="form-control"
+                  v-model="password">
       </div>
-    </div>
+      <button type="submit" class="btn btn-info btn-lg" @click.prevent="signinClient">Prisijungti</button>
+    </form>
   </div>
 </template>
 
@@ -109,6 +50,7 @@
           .catch(
             (error) => console.log(error)
           );
+        this.$router.push({ path: '/appointments' });
       },
       signinCompany() {
         axios.post('http://192.168.123.107/api/company/signin',
@@ -126,15 +68,11 @@
           .catch(
             (error) => console.log(error)
           );
+        this.$router.push({ path: '/appointments' });
       }
     }
   }
 </script>
 
 <style>
-  .login-right {
-    position: absolute;
-    right: 100px;
-    top: 20px;
-  }
 </style>

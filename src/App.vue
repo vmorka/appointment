@@ -1,17 +1,20 @@
 <template>
   <div id="app">
-    <signup></signup>
-    <signin></signin>
-    <add-services></add-services>
-    <home></home>
+    <div class="container">
+      <router-link :to="{ name: 'signup' }" class="btn btn-info">Registruotis</router-link>
+      <router-link :to="{ name: 'signin' }" class="btn btn-info">Prisijungti</router-link>
+    </div>
+    <hr />
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-  import Home from './components/Home.vue';
-  import signup from './components/signup.vue';
-  import signin from './components/signin.vue';
-  import addServices from './components/addServices.vue';
+  import Home from './components/Home.vue'
+  import signup from './components/signup.vue'
+  import signin from './components/signin.vue'
+  import appointments from './components/appointments.vue'
+  import addServices from './components/addServices.vue'
 
   export default {
     data () {

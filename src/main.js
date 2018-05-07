@@ -8,6 +8,7 @@ import axios from 'axios'
 import Home from './components/Home.vue'
 import signup from './components/signup.vue'
 import signin from './components/signin.vue'
+import appointments from './components/appointments.vue'
 import addServices from './components/addServices.vue'
 
 import 'bootstrap/dist/css/bootstrap.css'
@@ -18,10 +19,11 @@ Vue.use(axios)
 Vue.use(VueRouter)
 
 const routes = [
-  { path: '', component: Home },
-  { path: '/signup', component: signup },
-  { path: '/signin', component: signin },
-  { path: '/addServices', component: addServices }
+  { path: '/', name: 'home', component: Home },
+  { path: '/signup', name: 'signup', component: signup },
+  { path: '/signin', name: 'signin', component: signin },
+  { path: '/appointments', name: 'appointments', component: appointments },
+  { path: '/addServices', name: 'addServices', component: addServices }
 ]
 
 const router = new VueRouter({
