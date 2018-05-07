@@ -13,23 +13,21 @@
             <button type="button" class="close" data-dismiss="modal">&times;</button>
           </div>
           <div class="modal-body">
-            <form class="form-group">
-              <fieldset>
-                <button type="button" class="btn btn-info btn-lg" @click="addRow()">Pridėti</button><br /><br />
+            <button type="button" class="btn btn-info btn-lg" @click="addRow()">Pridėti</button><br /><br />
+            <form id="addServices" class="form-group">
                 <div class="form-inline" v-for="(service, index) in services">
-                    <input
-                            type="text"
-                            name="service"
-                            class="form-control"
-                            placeholder="Pridėkite paslaugą"
-                            v-model="service.next"> &nbsp;
-                            <button type="button" class="btn btn-secondary" @click="deleteRow(index)">Ištrinti</button><br /><br />
+                  <input
+                          type="text"
+                          name="service"
+                          class="form-control"
+                          placeholder="Pridėkite paslaugą"
+                          v-model="service.next"> &nbsp;
+                          <button type="button" class="btn btn-secondary" @click="deleteRow(index)">Ištrinti</button><br /><br />
                 </div>
-              </fieldset>
             </form>
           </div>
           <div class="modal-footer">
-            <button type="submit" class="btn btn-info btn-lg" @click.prevent="saveServices()">Išsaugoti</button>
+            <button type="submit" class="btn btn-info btn-lg" form="addServices" @click.prevent="saveServices()">Išsaugoti</button>
           </div>
         </div>
       </div>
@@ -50,7 +48,7 @@
       },
       addRow() {
         this.services.push({
-          
+
         })
       },
       deleteRow(index) {

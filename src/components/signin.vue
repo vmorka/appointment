@@ -18,26 +18,27 @@
           </div>
           <div class="modal-body">
             <form class="form-control">
+              <legend>Prisijungimo duomenys</legend>
               <div class="form-group">
-                  <label for="email">El. paštas</label>
                   <input
                           type="email"
                           name="email"
+                          placeholder="El.paštas"
                           class="form-control"
                           v-model="email">
               </div>
               <div class="form-group">
-                  <label for="password">Slaptažodis</label>
                   <input
                           type="password"
                           name="password"
+                          placeholder="Slaptažodis"
                           class="form-control"
                           v-model="password">
               </div>
             </form>
           </div>
           <div class="modal-footer">
-            <button type="submit" class="btn btn-info btn-lg" @click.prevent="signinClient">Prisijungti</button>
+            <button type="submit" class="btn btn-info btn-lg" @click.prevent="signinClient()">Prisijungti</button>
           </div>
         </div>
       </div>
@@ -53,19 +54,20 @@
           </div>
           <div class="modal-body">
             <form class="form-control">
+              <legend>Prisijungimo duomenys</legend>
               <div class="form-group">
-                  <label for="email">El. paštas</label>
                   <input
                           type="email"
                           name="email"
+                          placeholder="El.paštas"
                           class="form-control"
                           v-model="email">
               </div>
               <div class="form-group">
-                  <label for="password">Slaptažodis</label>
                   <input
                           type="password"
                           name="password"
+                          placeholder="Slaptažodis"
                           class="form-control"
                           v-model="password">
               </div>
@@ -130,9 +132,9 @@
 </script>
 
 <style>
-.login-right {
-  position: absolute;
-  right: 100px;
-  top: 20px;
-}
+  .login-right {
+    position: absolute;
+    right: 100px;
+    top: 20px;
+  }
 </style>

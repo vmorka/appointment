@@ -21,18 +21,18 @@
               <fieldset>
                 <legend>Prisijungimo duomenys</legend>
                 <div class="form-group">
-                    <label for="email">El. paštas</label>
                     <input
                             type="email"
                             name="email"
+                            placeholder="El.paštas"
                             class="form-control"
                             v-model="email">
                 </div>
                 <div class="form-group">
-                    <label for="password">Slaptažodis</label>
                     <input
                             type="password"
                             name="password"
+                            placeholder="Slaptažodis"
                             class="form-control"
                             v-model="password">
                 </div>
@@ -40,36 +40,36 @@
               <fieldset>
                 <legend>Kontaktiniai duomenys</legend>
                 <div class="form-group">
-                    <label for="first_name">Vardas</label>
                     <input
                             type="text"
                             id="first_name"
                             name="first_name"
+                            placeholder="Vardas"
                             class="form-control"
                             v-model="first_name">
                 </div>
                 <div class="form-group">
-                    <label for="last_name">Pavardė</label>
                     <input
                             type="text"
                             id="last_name"
                             name="last_name"
+                            placeholder="Pavardė"
                             class="form-control"
                             v-model="last_name">
                 </div>
                 <div class="form-group">
-                    <label for="city">Miestas</label>
                     <input
                             type="text"
                             name="city"
+                            placeholder="Miestas"
                             class="form-control"
                             v-model="city">
                 </div>
                 <div class="form-group">
-                    <label for="phone">Tel. Nr.</label>
                     <input
                             type="text"
                             name="phone"
+                            placeholder="Tel. Nr."
                             class="form-control"
                             v-model="phone">
                 </div>
@@ -96,18 +96,18 @@
               <fieldset>
                 <legend>Prisijungimo duomenys</legend>
                 <div class="form-group">
-                    <label for="email">El. paštas</label>
                     <input
                             type="email"
                             name="email"
+                            placeholder="El.paštas"
                             class="form-control"
                             v-model="email">
                 </div>
                 <div class="form-group">
-                    <label for="password">Slaptažodis</label>
                     <input
                             type="password"
                             name="password"
+                            placeholder="Slaptažodis"
                             class="form-control"
                             v-model="password">
                 </div>
@@ -115,32 +115,31 @@
               <fieldset>
                 <legend>Kontaktiniai duomenys</legend>
                 <div class="form-group">
-                    <label for="company_name">Įmonės pavadinimas</label>
                     <input
                             type="text"
                             id="company_name"
                             name="company_name"
+                            placeholder="Įmonės pavadinimas"
                             class="form-control"
                             v-model="company_name">
                 </div>
                 <div class="form-group">
-                    <label for="city">Miestas</label>
                     <input
                             type="text"
                             name="city"
+                            placeholder="Miestas"
                             class="form-control"
                             v-model="city">
                 </div>
                 <div class="form-group">
-                    <label for="phone">Tel. Nr.</label>
                     <input
                             type="text"
                             name="phone"
+                            placeholder="Tel. Nr."
                             class="form-control"
                             v-model="phone">
                 </div>
                 <div class="form-group">
-                    <label for="password">Įmonės aprašymas</label>
                     <textarea
                             id="description"
                             name="description"
