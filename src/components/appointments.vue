@@ -2,9 +2,66 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <button type="button" class="btn btn-info">Miestai</button>
-        <button type="button" class="btn btn-info">Paslaugos</button>
-        <button type="button" class="btn btn-info">Specialistai</button>
+        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#cities">Miestai</button>
+        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#services">Paslaugos</button>
+        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#specialists">Specialistai</button>
+      </div>
+    </div>
+
+    <div id="cities" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Pasirinkite miestą</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <div class="modal-body">
+            <div v-for="city in cities">
+                 <a href="">{{ city.city_name }}</a>
+          </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-info" data-dismiss="modal">Uždaryti</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="services" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Pasirinkite paslaugą</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <div class="modal-body">
+            <div v-for="service in services">
+                 <a href="">{{ service.service_name }}</a>
+          </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-info" data-dismiss="modal">Uždaryti</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="specialists" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Pasirinkite specialistą</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <div class="modal-body">
+            <div v-for="specialist in specialists">
+                 <a href="">{{ specialist.specialist_name }}</a>
+          </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-info" data-dismiss="modal">Uždaryti</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>

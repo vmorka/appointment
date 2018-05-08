@@ -1,11 +1,8 @@
 <template>
   <div id="app">
     <div class="container">
-      <router-link :to="{ name: 'signup' }" class="btn btn-info">Registruotis</router-link>
-      <router-link :to="{ name: 'signin' }" class="btn btn-info">Prisijungti</router-link>
-    </div>
-    <hr />
     <router-view></router-view>
+    </div>
   </div>
 </template>
 
