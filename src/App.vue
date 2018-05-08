@@ -24,7 +24,8 @@
       'home': Home,
       'signup': signup,
       'signin': signin,
-      'add-company': addCompany
+      'add-company': addCompany,
+      'appointments': appointments
     }
   }
 </script>
