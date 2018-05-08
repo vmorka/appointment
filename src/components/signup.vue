@@ -53,7 +53,7 @@
                     class="form-control"
                     v-model="phone">
         </div>
-      <button type="submit" class="btn btn-info btn-lg" @click.prevent="signupClient">Registruotis</button>
+      <button type="submit" class="btn btn-info btn-lg" @click.prevent="signup">Registruotis</button>
     </form>
   </div>
 </template>
@@ -75,27 +75,16 @@
       }
     },
     methods: {
-      signupClient() {
+      signup() {
           axios.post('http://192.168.123.107/api/user',
               {email: this.email, password: this.password, first_name: this.first_name, last_name: this.last_name, city: this.city, phone: this.phone})
               .then(
-                  (response) => console.log(response)
+                  (response) => console.log(response),
+                  this.$router.push({ path: '/signin' })
               )
               .catch(
                   (error) => console.log(error)
               );
-          this.$router.push({ path: '/signin' });
-      },
-      signupCompany() {
-          axios.post('http://192.168.123.107/api/company',
-              {email: this.email, password: this.password, company_name: this.company_name, city: this.city, phone: this.phone, description: this.description})
-              .then(
-                  (response) => console.log(response)
-              )
-              .catch(
-                  (error) => console.log(error)
-              );
-          this.$router.push({ path: '/signin' });
       }
     }
   }

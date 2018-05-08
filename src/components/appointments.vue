@@ -1,11 +1,12 @@
 <template>
   <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#cities">Miestai</button>
-        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#services">Paslaugos</button>
-        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#specialists">Specialistai</button>
-      </div>
+    <div>
+      <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#cities">Miestai</button>
+      <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#services">Paslaugos</button>
+      <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#specialists">Specialistai</button>
+    </div><br />
+    <div>
+      <router-link class="btn btn-info btn-lg" :to="{ name: 'addCompany' }">Pridėti įmonę +</router-link>
     </div>
 
     <div id="cities" class="modal fade" role="dialog">
@@ -36,7 +37,7 @@
           </div>
           <div class="modal-body">
             <div v-for="service in services">
-                 <a href="">{{ service.service_name }}</a>
+                 <a href="">{{ service.service }}</a>
           </div>
           </div>
           <div class="modal-footer">
@@ -55,7 +56,7 @@
           </div>
           <div class="modal-body">
             <div v-for="specialist in specialists">
-                 <a href="">{{ specialist.specialist_name }}</a>
+                 <a href="">{{ specialist.specialist }}</a>
           </div>
           </div>
           <div class="modal-footer">
@@ -117,5 +118,4 @@ export default {
 </script>
 
 <style>
-
 </style>

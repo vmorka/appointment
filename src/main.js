@@ -9,7 +9,7 @@ import Home from './components/Home.vue'
 import signup from './components/signup.vue'
 import signin from './components/signin.vue'
 import appointments from './components/appointments.vue'
-import addServices from './components/addServices.vue'
+import addCompany from './components/addCompany.vue'
 
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
@@ -23,7 +23,7 @@ const routes = [
   { path: '/signup', name: 'signup', component: signup },
   { path: '/signin', name: 'signin', component: signin },
   { path: '/appointments', name: 'appointments', component: appointments },
-  { path: '/addServices', name: 'addServices', component: addServices }
+  { path: '/addCompany', name: 'addCompany', component: addCompany }
 ]
 
 const router = new VueRouter({

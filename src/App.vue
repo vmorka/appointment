@@ -1,7 +1,8 @@
 <template>
   <div id="app">
     <div class="container">
-    <router-view></router-view>
+      <h1>Appointment App</h1>
+      <router-view></router-view>
     </div>
   </div>
 </template>
@@ -11,7 +12,7 @@
   import signup from './components/signup.vue'
   import signin from './components/signin.vue'
   import appointments from './components/appointments.vue'
-  import addServices from './components/addServices.vue'
+  import addCompany from './components/addCompany.vue'
 
   export default {
     data () {
@@ -23,10 +24,13 @@
       'home': Home,
       'signup': signup,
       'signin': signin,
-      'add-services': addServices
+      'add-company': addCompany
     }
   }
 </script>
 
 <style>
+h1 {
+  padding: 30px;
+}
 </style>

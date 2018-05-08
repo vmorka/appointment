@@ -18,7 +18,7 @@
                   class="form-control"
                   v-model="password">
       </div>
-      <button type="submit" class="btn btn-info btn-lg" @click.prevent="signinClient">Prisijungti</button>
+      <button type="submit" class="btn btn-info btn-lg" @click.prevent="signin">Prisijungti</button>
     </form>
   </div>
 </template>
@@ -34,7 +34,7 @@
       }
     },
     methods: {
-      signinClient() {
+      signin() {
         axios.post('http://192.168.123.107/api/user/signin',
           {email: this.email, password: this.password},
           {headers: {'X-Requested-With': 'XMLHttpRequest'}})
@@ -45,30 +45,12 @@
               const base64 = base64Url.replace('-', '+').replace('_', '/');
               console.log(JSON.parse(window.atob(base64)));
               localStorage.setItem('token', token);
-            }
+            },
+          this.$router.push({ path: '/appointments' })
           )
           .catch(
             (error) => console.log(error)
           );
-        this.$router.push({ path: '/appointments' });
-      },
-      signinCompany() {
-        axios.post('http://192.168.123.107/api/company/signin',
-          {email: this.email, password: this.password},
-          {headers: {'X-Requested-With': 'XMLHttpRequest'}})
-          .then(
-            (response) => {
-              const token = response.data.token;
-              const base64Url = token.split('.')[1];
-              const base64 = base64Url.replace('-', '+').replace('_', '/');
-              console.log(JSON.parse(window.atob(base64)));
-              localStorage.setItem('token', token);
-            }
-          )
-          .catch(
-            (error) => console.log(error)
-          );
-        this.$router.push({ path: '/appointments' });
       }
     }
   }
