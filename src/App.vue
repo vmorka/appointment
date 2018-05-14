@@ -13,6 +13,8 @@
   import signin from './components/signin.vue'
   import appointments from './components/appointments.vue'
   import addCompany from './components/addCompany.vue'
+  import aTable from './components/aTable.vue'
+  import addInfo from'./components/addInfo.vue'
 
   export default {
     data () {
@@ -25,13 +27,16 @@
       'signup': signup,
       'signin': signin,
       'add-company': addCompany,
-      'appointments': appointments
+      'appointments': appointments,
+      'aTable': aTable,
+      'addInfo': addInfo
     }
   }
 </script>
 
 <style>
 h1 {
+  text-align: center;
   padding: 30px;
 }
 </style>

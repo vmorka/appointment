@@ -76,11 +76,10 @@
     },
     methods: {
       addCompany () {
-        axios.post('http://192.168.123.107/api/user',
+        axios.post('http://192.168.123.108/api/company',
             {company_name: this.company_name, address: this.address, city: this.city, phone: this.phone, service: this.service, specialist: this.specialist})
             .then(
                 (response) => console.log(response),
-                alert("Sėkmingai pridėta."),
                 this.$router.push({ path: '/appointments' })
             )
             .catch(

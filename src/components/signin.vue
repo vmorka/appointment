@@ -20,6 +20,7 @@
       </div>
       <button type="submit" class="btn btn-info btn-lg" @click.prevent="signin">Prisijungti</button>
     </form>
+    Dar neturite paskyros? <router-link :to="{ name: 'signup' }">Užsiregistruokite.</router-link>
   </div>
 </template>
 

@@ -15,8 +15,11 @@
     "bootstrap-vue": "^2.0.0-rc.9",
     "jquery": "^3.3.1",
     "vue": "^2.5.11",
+    "vue-good-table": "^2.4.8",
     "vue-google-signin-button": "^1.0.2",
     "vue-router": "^3.0.1",
+    "vue-table-component": "^1.9.1",
+    "vue2-timepicker": "^0.1.4",
     "vuetify": "^1.0.17"
   },
   "browserslist": [
